@@ -1,0 +1,93 @@
+/* Body and Navbar Styling */
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Didot', 'Bondni', serif;
+    background: linear-gradient(to right, #f1e1c6, #F4C2C2);
+    color: #654321;
+}
+
+/* Navbar Container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1e1c6;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    position: relative;
+}
+
+/* Left Side (Logo) */
+.navbar .leftSide {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .leftSide img {
+    width: 90px;
+    height: auto;
+}
+
+/* Right Side (Links and Toggle Button) */
+.navbar .rightSide {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar .rightSide a {
+    text-decoration: none;
+    color: #654321;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .rightSide a:hover {
+    color: #BFB2A5;
+}
+
+.navbar .rightSide button {
+    background: none;
+    border: none;
+    color: #654321;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default, only visible in smaller screens */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Left Side */
+    .navbar .leftSide {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Right Side */
+    .navbar .rightSide {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #f1e1c6;
+        width: 100%;
+        display: none; /* Hidden by default */
+        gap: 10px;
+        padding: 10px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar #open .rightSide {
+        display: flex; /* Show the menu when #open is applied */
+    }
+
+    /* Toggle Button */
+    .navbar .rightSide button {
+        display: block;
+    }
+}
